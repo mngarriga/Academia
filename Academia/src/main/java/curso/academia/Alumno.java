@@ -5,6 +5,7 @@
 package curso.academia;
 
 import java.util.Set;
+import java.util.TreeSet;
 
 /**
  *
@@ -13,13 +14,14 @@ import java.util.Set;
 public class Alumno {
     private Integer id;
     private String nombre;
-    private Set<Asignatura> asignaturas;
+    private TreeSet<Asignatura> asignaturas;
     private static Integer genId = 0;
 
     public Alumno(String nombre) {
         genId++;
         this.id = genId;
         this.nombre = nombre;
+        asignaturas = new TreeSet<Asignatura>();
     }
     
     
