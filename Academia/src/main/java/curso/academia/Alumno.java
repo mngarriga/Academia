@@ -4,11 +4,13 @@
  */
 package curso.academia;
 
+import java.util.Date;
+
 /**
  *
  * @author Usuario
  */
 public class Alumno {
-    private Integer id;
+    private Integer id; 
     
 }
