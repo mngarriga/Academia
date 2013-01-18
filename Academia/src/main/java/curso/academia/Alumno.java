@@ -9,5 +9,6 @@ package curso.academia;
  * @author Usuario
  */
 public class Alumno {
+    private Integer id;
     
 }
