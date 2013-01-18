@@ -6,13 +6,14 @@ package curso.academia;
 
 import java.util.Date;
 import java.util.Set;
+import java.util.TreeSet;
 
 /**
  *
  * @author Usuario
  */
 public class Asignatura {
-    private static Integer idgen = 0;
+    private static Integer idGen = 0;
     private Integer id;
     private String nombre;
     private Profesor prof;
@@ -21,6 +22,21 @@ public class Asignatura {
     private Date inicio;
     private Date fin;
     private Set<Alumno> alumnos;
+    
+    
+    public Asignatura(){
+        id = ++idGen;
+        alumnos = new TreeSet<Alumno>();
+    }
+    
+    public Asignatura(String nombre, int horas, Date inicio, Date fin){
+        this();
+        this.nombre = nombre;
+        this.horas = horas;
+        this.inicio = inicio;
+        this.fin = fin;
+        
+    }
     
     public String getNombre() {
         return nombre;
@@ -69,7 +85,7 @@ public class Asignatura {
     public void addAlumno(Alumno alumno){
         if (!alumnos.contains(alumno)) {
             alumnos.add(alumno);
-            //alumno.addAsignatura(this);
+            alumno.addAsignatura(this);
         }
     }
 
