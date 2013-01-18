@@ -14,9 +14,11 @@ public class Alumno {
     private Integer id;
     private String nombre;
     private Set<Asignatura> asignaturas;
+    private static Integer genId = 0;
 
-    public Alumno(Integer id, String nombre) {
-        this.id = id;
+    public Alumno(String nombre) {
+        genId++;
+        this.id = genId;
         this.nombre = nombre;
     }
     
