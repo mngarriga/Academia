@@ -15,6 +15,13 @@ public class Alumno {
     private String nombre;
     private Set<Asignatura> asignaturas;
 
+    public Alumno(Integer id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+    
+    
+
     public Integer getId() {
         return id;
     }
@@ -55,11 +62,11 @@ public class Alumno {
     
     
     
-    public void addAsignatura(Asignatura newAsignaturas) {
+    public void addAsignatura(Asignatura newAsignatura) {
         
-            if (!(asignaturas.contains(newAsignaturas)) ) {
-                asignaturas.add(newAsignaturas);
-               // newAsignatura.addAlumno(this); 
+            if (!(asignaturas.contains(newAsignatura)) ) {
+                asignaturas.add(newAsignatura);
+              newAsignatura.addAlumno(this);
             }
         }
         
