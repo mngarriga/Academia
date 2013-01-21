@@ -13,11 +13,13 @@ import java.util.HashSet;
 public class Profesor {
     private int id;
     private String nombre;
+    private  static Integer genId = 0;
     
     HashSet<Asignatura> asignaturasProfeesor = new HashSet<Asignatura>();
 
-    public Profesor(int id, String nombre) {
-        this.id = id;
+    public Profesor(String nombre) {
+        
+        this.id = genId++;
         this.nombre = nombre;
     }
 
@@ -37,5 +39,7 @@ public class Profesor {
         this.nombre = nombre;
     }
     
-    
+    public void addAsignatura(Asignatura newAsignatura) {
+        asignaturasProfeesor.add(newAsignatura);
+    }
 }
