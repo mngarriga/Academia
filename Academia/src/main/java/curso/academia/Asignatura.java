@@ -54,7 +54,10 @@ public class Asignatura {
     }
 
     public void setProf(Profesor prof) {
-        this.prof = prof;
+        if (!prof.equals(this.prof)){
+            this.prof = prof;
+            prof.addAsignatura(this);
+        }
     }
 
     public Aula getAula() {

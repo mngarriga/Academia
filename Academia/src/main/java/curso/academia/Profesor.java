@@ -46,6 +46,9 @@ public class Profesor {
     }
     
     public void addAsignatura(Asignatura newAsignatura) {
-        asignaturasProfeesor.add(newAsignatura);
+        if (asignaturasProfeesor.contains(newAsignatura)){
+            asignaturasProfeesor.add(newAsignatura);
+            newAsignatura.setProf(this);    
+        }
     }
 }
