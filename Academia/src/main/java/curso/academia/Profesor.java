@@ -5,6 +5,8 @@
 package curso.academia;
 
 import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  *
@@ -50,5 +52,14 @@ public class Profesor {
             asignaturasProfeesor.add(newAsignatura);
             newAsignatura.setProf(this);    
         }
+    }
+    
+    public Set<Alumno> alumnosAtendidosProfesor(){
+        Set<Alumno> setAlumnos = new TreeSet<Alumno>();
+        for (Asignatura asignatura : asignaturasProfeesor) {
+            setAlumnos.addAll(asignatura.getAlumnos());
+        }
+        
+        return setAlumnos;
     }
 }

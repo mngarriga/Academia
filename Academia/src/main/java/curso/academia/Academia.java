@@ -64,12 +64,6 @@ public class Academia {
     }
     
     public Set<Alumno> alumnosAtendidosProfesor(Profesor profesor){
-        Set<Alumno> setAlumnos = new TreeSet<Alumno>();
-        Set<Asignatura> setAsig = profesor.getAsignaturasProfeesor();
-        for (Asignatura asignatura : setAsig) {
-            setAlumnos.addAll(asignatura.getAlumnos());
-        }
-        
-        return setAlumnos;
+        return profesor.alumnosAtendidosProfesor();
     }
 }
