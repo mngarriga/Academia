@@ -3,9 +3,9 @@ package curso.academia;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class Academia {
 
@@ -61,5 +61,15 @@ public class Academia {
         }
 
         return aulasLibres;
+    }
+    
+    public Set<Alumno> alumnosAtendidosProfesor(Profesor profesor){
+        Set<Alumno> alumnos = new TreeSet<Alumno>();
+        Set<Asignatura> setAsig = profesor.getAsignaturasProfeesor();
+        for (Asignatura asignatura : setAsig) {
+            alumnos.addAll(asignatura.getAlumnos());
+        }
+        
+        return alumnos;
     }
 }
