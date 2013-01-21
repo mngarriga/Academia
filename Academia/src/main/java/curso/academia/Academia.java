@@ -44,4 +44,8 @@ public class Academia {
         Aula newAula = new Aula(nombre, cap, tieneProyec);
         aulas.put(newAula.getNombre(), newAula);
     }
+    
+    public void addHorario(Aula aula, Asignatura asignatura, Date inicio, Date fin) {
+        aula.addHorario(inicio, fin, asignatura);
+    }
 }
