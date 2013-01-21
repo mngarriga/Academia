@@ -4,7 +4,6 @@
  */
 package curso.academia;
 
-import java.util.Date;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -19,8 +18,6 @@ public class Asignatura {
     private Profesor prof;
     private Aula aula;
     private int horas;
-    private Date inicio;
-    private Date fin;
     private Set<Alumno> alumnos;
     
     
@@ -29,13 +26,10 @@ public class Asignatura {
         alumnos = new TreeSet<Alumno>();
     }
     
-    public Asignatura(String nombre, int horas, Date inicio, Date fin){
+    public Asignatura(String nombre, int horas){
         this();
         this.nombre = nombre;
-        this.horas = horas;
-        this.inicio = inicio;
-        this.fin = fin;
-        
+        this.horas = horas;       
     }
     
     public String getNombre() {
@@ -65,24 +59,12 @@ public class Asignatura {
     public int getHoras() {
         return horas;
     }
-
-    public Date getInicio() {
-        return inicio;
-    }
-
-    public void setInicio(Date inicio) {
-        this.inicio = inicio;
-    }
-
-    public Date getFin() {
-        return fin;
-    }
-
-    public void setFin(Date fin) {
-        this.fin = fin;
-    }
     
-    public void addAlumno(Alumno alumno){
+    public Integer getId() {
+        return id;
+    }
+
+   public void addAlumno(Alumno alumno){
         if (!alumnos.contains(alumno)) {
             alumnos.add(alumno);
             alumno.addAsignatura(this);
