@@ -37,5 +37,7 @@ public class Profesor {
         this.nombre = nombre;
     }
     
-    
+    public void addAsignatura(Asignatura newAsignatura) {
+        asignaturasProfeesor.add(newAsignatura);
+    }
 }
