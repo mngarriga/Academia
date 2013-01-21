@@ -123,6 +123,10 @@ public class Asignatura {
         }
         return true;
     }
+
+    public Set<Alumno> getAlumnos() {
+        return alumnos;
+    }
     
     
     
