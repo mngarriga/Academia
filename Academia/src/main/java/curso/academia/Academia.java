@@ -3,6 +3,8 @@ package curso.academia;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 public class Academia {
@@ -49,7 +51,10 @@ public class Academia {
 
     public ArrayList<Aula> aulasLibres(Date horaI, Date horaF) {
         ArrayList<Aula> aulasLibres = new ArrayList<Aula>();
-        for (Aula aula : aulasLibres) {
+        
+        Set<Aula> setAulas = (Set<Aula>) aulas.values();
+        
+        for (Aula aula: setAulas) {
             if (aula.estaLibre(horaI, horaF)) {
                 aulasLibres.add(aula);
             }
