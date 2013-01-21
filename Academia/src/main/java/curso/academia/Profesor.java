@@ -31,6 +31,12 @@ public class Profesor {
         this.id = id;
     }
 
+    public HashSet<Asignatura> getAsignaturasProfeesor() {
+        return asignaturasProfeesor;
+    }
+    
+    
+
     public String getNombre() {
         return nombre;
     }
