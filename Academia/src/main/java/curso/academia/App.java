@@ -17,15 +17,15 @@ public class App
         
         Academia academia = new Academia("CREA", "aqui N. 30");
 
-        gc.set(Calendar.HOUR, 5);
+        gc.set(Calendar.HOUR_OF_DAY, 5);
         Date horaI = gc.getTime();
-        gc.set(Calendar.HOUR, 7);
+        gc.set(Calendar.HOUR_OF_DAY, 7);
         Date horaF = gc.getTime();
         Asignatura asignatura1 = new Asignatura("Matematicas", 200, horaI, horaF);
         
-        gc.set(Calendar.HOUR, 4);
+        gc.set(Calendar.HOUR_OF_DAY, 4);
         horaI = gc.getTime();
-        gc.set(Calendar.HOUR, 5);
+        gc.set(Calendar.HOUR_OF_DAY, 5);
         horaF = gc.getTime();
         Asignatura asignatura2 = new Asignatura("Programacion", 250, horaI, horaF);
         
