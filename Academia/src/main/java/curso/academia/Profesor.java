@@ -4,10 +4,38 @@
  */
 package curso.academia;
 
+import java.util.HashSet;
+
 /**
  *
  * @author Usuario
  */
 public class Profesor {
+    private int id;
+    private String nombre;
+    
+    HashSet<Asignatura> asignaturasProfeesor = new HashSet<Asignatura>();
+
+    public Profesor(int id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
     
 }

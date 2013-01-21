@@ -74,14 +74,14 @@ public class Alumno {
             }
         }
         
-    }
+    
     
     public void removeAsignatura(Asignatura newAsignatura) {
-        if (asignaturas.contains(newAsignatura) ) {
-                asignaturas.remove(newAsignatura);
+
+        if (asignaturas.contains(newAsignatura)) {
+              asignaturas.remove(newAsignatura);
               newAsignatura.removeAlumno(this);
             }
     }
     
-    
-
+}
