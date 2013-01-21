@@ -46,14 +46,7 @@ public class Academia {
         aulas.put(newAula.getNombre(), newAula);
     }
     
-    public ArrayList<Aula> aulasLibres(Date horaI, Date horaF){
-        ArrayList<Aula> aulasLibres = new ArrayList<Aula>();
-        for (Aula aula : aulasLibres) {
-            if (aula.estaLibre(horaI, horaF)) {
-                aulasLibres.add(aula);
-            }
-        }
-        
-        return aulasLibres;
+    public void addHorario(Aula aula, Asignatura asignatura, Date inicio, Date fin) {
+        aula.addHorario(inicio, fin, asignatura);
     }
 }
