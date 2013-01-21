@@ -17,7 +17,7 @@ public class Profesor {
     
     HashSet<Asignatura> asignaturasProfeesor = new HashSet<Asignatura>();
 
-    public Profesor(int id, String nombre) {
+    public Profesor(String nombre) {
         
         this.id = genId++;
         this.nombre = nombre;
