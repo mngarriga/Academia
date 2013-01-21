@@ -36,12 +36,12 @@ public class Academia {
     }
     
     public void addAsignatura(String nombre, int horas, Date inicio, Date fin) {
-        Asignatura newAsignatura = new Asignatura(nombre, horas, inicio, fin);
-        asignaturas.put(newAsignatura.getId, newAsignatura);
+        Asignatura newAsignatura = new Asignatura(nombre, horas);
+        asignaturas.put(newAsignatura.getId(), newAsignatura);
     }
     
     public void addAula(String nombre, int cap, boolean tieneProyec) {
         Aula newAula = new Aula(nombre, cap, tieneProyec);
-        aulas.put(newAula.getId, newAula);
+        aulas.put(newAula.getNombre(), newAula);
     }
 }
