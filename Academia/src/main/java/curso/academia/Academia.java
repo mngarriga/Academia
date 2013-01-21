@@ -1,5 +1,6 @@
 package curso.academia;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.TreeMap;
@@ -43,5 +44,16 @@ public class Academia {
     public void addAula(String nombre, int cap, boolean tieneProyec) {
         Aula newAula = new Aula(nombre, cap, tieneProyec);
         aulas.put(newAula.getNombre(), newAula);
+    }
+    
+    public ArrayList<Aula> aulasLibres(Date horaI, Date horaF){
+        ArrayList<Aula> aulasLibres = new ArrayList<Aula>();
+        for (Aula aula : aulasLibres) {
+            if (aula.estaLibre(horaI, horaF)) {
+                aulasLibres.add(aula);
+            }
+        }
+        
+        return aulasLibres;
     }
 }
