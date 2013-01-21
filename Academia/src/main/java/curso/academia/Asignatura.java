@@ -88,7 +88,14 @@ public class Asignatura {
             alumno.addAsignatura(this);
         }
     }
-
+  
+    public void removeAlumno(Alumno alumno){
+       if (alumnos.contains(alumno)) {
+            alumnos.remove(alumno);
+            alumno.removeAsignatura(this);
+        }
+    }
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -110,6 +117,7 @@ public class Asignatura {
         }
         return true;
     }
+    
     
     
 }
