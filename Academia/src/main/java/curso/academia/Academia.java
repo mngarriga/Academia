@@ -6,13 +6,13 @@ import java.util.HashMap;
 import java.util.TreeMap;
 
 public class Academia {
+
     private String nombre;
-    private  String direccion;
-    
+    private String direccion;
     HashMap<Integer, Alumno> alumnos = new HashMap<Integer, Alumno>();
     HashMap<Integer, Profesor> profesores = new HashMap<Integer, Profesor>();
     HashMap<Integer, Asignatura> asignaturas = new HashMap<Integer, Asignatura>();
-    TreeMap<String, Aula> aulas = new  TreeMap<String, Aula>();
+    TreeMap<String, Aula> aulas = new TreeMap<String, Aula>();
 
     public Academia(String nombre, String direccion) {
         this.nombre = nombre;
@@ -22,6 +22,7 @@ public class Academia {
     public String getNombre() {
         return nombre;
     }
+
     public String getDireccion() {
         return direccion;
     }
@@ -30,23 +31,34 @@ public class Academia {
         Alumno newAlumno = new Alumno(nombre);
         alumnos.put(newAlumno.getId(), newAlumno);
     }
-    
+
     public void addProfesor(String nombre) {
         Profesor newProfesor = new Profesor(nombre);
         profesores.put(newProfesor.getId(), newProfesor);
     }
-    
+
     public void addAsignatura(String nombre, int horas, Date inicio, Date fin) {
         Asignatura newAsignatura = new Asignatura(nombre, horas);
         asignaturas.put(newAsignatura.getId(), newAsignatura);
     }
-    
+
     public void addAula(String nombre, int cap, boolean tieneProyec) {
         Aula newAula = new Aula(nombre, cap, tieneProyec);
         aulas.put(newAula.getNombre(), newAula);
     }
-    
+
     public void addHorario(Aula aula, Asignatura asignatura, Date inicio, Date fin) {
         aula.addHorario(inicio, fin, asignatura);
+    }
+
+    public ArrayList<Aula> aulasLibres(Date horaI, Date horaF) {
+        ArrayList<Aula> aulasLibres = new ArrayList<Aula>();
+        for (Aula aula : aulasLibres) {
+            if (aula.estaLibre(horaI, horaF)) {
+                aulasLibres.add(aula);
+            }
+        }
+
+        return aulasLibres;
     }
 }
