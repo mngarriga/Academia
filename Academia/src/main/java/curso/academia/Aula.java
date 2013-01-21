@@ -4,10 +4,10 @@
  */
 package curso.academia;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.HashSet;
 
 /**
  *
@@ -18,13 +18,13 @@ public class Aula {
     private String nombre;
     private int capacidad;
     private boolean tieneProyector;
-    private ArrayList<Horario> horarios;
+    private HashSet<Asignatura> asignaturas;
 
     public Aula(String nombre, int capacidad, boolean tieneProyector) {
         this.nombre = nombre;
         this.capacidad = capacidad;
         this.tieneProyector = tieneProyector;
-        horarios = new ArrayList<Horario>();
+        asignaturas = new HashSet<Asignatura>();
     }
 
     public String getNombre() {
@@ -60,10 +60,10 @@ public class Aula {
         gc.setTime(horaF);
         horaAuxF = gc.get(Calendar.HOUR);
 
-        for (Horario horario : horarios) {
-            gc.setTime(horario.getHoraI());
+        for (Asignatura asignatura : asignaturas) {
+            gc.setTime(asignatura.getHoraI());
             horaILs = gc.get(Calendar.HOUR);
-            gc.setTime(horario.getHoraF());
+            gc.setTime(asignatura.getHoraF());
             horaFLs = gc.get(Calendar.HOUR);
 
             if ((horaAuxI > horaILs && horaAuxI < horaFLs) ||
@@ -74,10 +74,13 @@ public class Aula {
         return true;
     }
 
-    public void addHorario(Date horaI, Date horaF, Asignatura asignatura) {
-        horarios.add(new Horario(horaI, horaF, this, asignatura));
+    public void addAsignatura(Asignatura asignatura){
+        if(estaLibre(asignatura.getHoraI(), asignatura.getHoraF())) {
+            asignaturas.add(asignatura);
+            asignatura.addAula(this);
+        }
     }
-
+    
     @Override
     public int hashCode() {
         int hash = 7;

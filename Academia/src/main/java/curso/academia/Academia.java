@@ -37,18 +37,14 @@ public class Academia {
         profesores.put(newProfesor.getId(), newProfesor);
     }
 
-    public void addAsignatura(String nombre, int horas, Date inicio, Date fin) {
-        Asignatura newAsignatura = new Asignatura(nombre, horas);
+    public void addAsignatura(String nombre, int horas, Date horaI, Date horaF) {
+        Asignatura newAsignatura = new Asignatura(nombre, horas, horaI, horaF);
         asignaturas.put(newAsignatura.getId(), newAsignatura);
     }
 
     public void addAula(String nombre, int cap, boolean tieneProyec) {
         Aula newAula = new Aula(nombre, cap, tieneProyec);
         aulas.put(newAula.getNombre(), newAula);
-    }
-
-    public void addHorario(Aula aula, Asignatura asignatura, Date inicio, Date fin) {
-        aula.addHorario(inicio, fin, asignatura);
     }
 
     public ArrayList<Aula> aulasLibres(Date horaI, Date horaF) {

@@ -4,6 +4,8 @@
  */
 package curso.academia;
 
+import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -18,18 +20,25 @@ public class Asignatura {
     private Profesor prof;
     private Aula aula;
     private int horas;
+    private Date horaI;
+    private Date horaF;
     private Set<Alumno> alumnos;
+    private Set<Aula> aulas;
+
     
     
     public Asignatura(){
         id = ++idGen;
         alumnos = new TreeSet<Alumno>();
+        aulas = new HashSet<Aula>();
     }
     
-    public Asignatura(String nombre, int horas){
+    public Asignatura(String nombre, int horas, Date horaI, Date horaF){
         this();
         this.nombre = nombre;
-        this.horas = horas;       
+        this.horas = horas;    
+        this.horaI = horaI;
+        this.horaF = horaF;
     }
     
     public String getNombre() {
@@ -75,6 +84,21 @@ public class Asignatura {
        if (alumnos.contains(alumno)) {
             alumnos.remove(alumno);
             alumno.removeAsignatura(this);
+        }
+    }
+    
+    public Date getHoraI() {
+        return horaI;
+    }
+
+    public Date getHoraF() {
+        return horaF;
+    }
+    
+    public void addAula(Aula aula){
+        if (!aulas.contains(aula)) {
+            aulas.add(aula);
+            aula.addAsignatura(this);
         }
     }
     
